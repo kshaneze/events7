@@ -5,10 +5,10 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Id</th>
-          <th scope="col">description</th>
-          <th scope="col">type</th>
-          <th scope="col">priority</th>
-          <th scope="col">relatedEvents</th>
+          <th scope="col">Description</th>
+          <th scope="col">Type</th>
+          <th scope="col">Priority</th>
+          <th scope="col">RelatedEvents</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
