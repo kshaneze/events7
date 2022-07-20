@@ -1,6 +1,6 @@
 <template>
   <div class="card card-body mt-4 w-50 m-auto">
-    <h3>Edit events</h3>
+    <h3>Edit event</h3>
     <form @submit.prevent="update">
       <div class="form-group">
         <label for="">Event Name</label>

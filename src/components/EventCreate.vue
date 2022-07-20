@@ -35,7 +35,6 @@ export default {
   setup() {
     const form = reactive({
       name: '',
-      // id: '',
       description: '',
       type: '',
       priority: '',
@@ -45,7 +44,6 @@ export default {
     const onSubmit = async () => {
       await createEvent({ ...form })
       form.name = ''
-      // form.id = ''
       form.description = ''
       form.type = ''
       form.priority = ''
