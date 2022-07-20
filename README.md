@@ -1,5 +1,3 @@
-# events7
-
 ## Project setup
 
 ```
