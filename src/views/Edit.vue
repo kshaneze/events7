@@ -37,19 +37,20 @@ export default {
   setup() {
     const router = useRouter()
     const route = useRoute()
+    // in composition API this is the way to access params form route
     const eventId = computed(() => route.params.id)
     const form = reactive({
       name: '',
-      // id: '',
       description: '',
       type: '',
       priority: '',
       relatedEvents: '',
     })
 
+    // onMount lifescycle hook that is use to load events
     onMounted(async () => {
       const event = await getEvent(eventId.value)
-      console.log(event, eventId.value)
+
       form.name = event.name
       // form.id = event.id
       form.description = event.description
@@ -57,16 +58,22 @@ export default {
       form.priority = event.priority
       form.relatedEvents = event.relatedEvents
     })
+
+    // Update function that is called on button edit
+    // In this function updateEvent fucntion is called and passed two parameters (id and events)
     const update = async () => {
       await updateEvent(eventId.value, { ...form })
+
+      // After updating by default send us to Home page
       router.push('/')
+      // Reset all inputs
       form.name = ''
-      // form.id = ''
       form.description = ''
       form.type = ''
       form.priority = ''
       form.relatedEvents = ''
     }
+    // Send data outside of setup
     return { form, update }
   },
 }

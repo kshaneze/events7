@@ -21,25 +21,31 @@ const firebaseApp = firebase.initializeApp(firebaseConfig)
 
 const db = firebaseApp.firestore()
 
+// Storing collection
 const eventsCollection = db.collection('events')
 
+// Creating event - function
 export const createEvent = (event) => {
   return eventsCollection.add(event)
 }
 
+// Get event - function
 export const getEvent = async (id) => {
   const event = await eventsCollection.doc(id).get()
   return event.exists ? event.data() : null
 }
 
+// Update event - function
 export const updateEvent = (id, event) => {
   return eventsCollection.doc(id).update(event)
 }
 
+// Delete event - function
 export const deleteEvent = (id) => {
   return eventsCollection.doc(id).delete()
 }
 
+// Readind data from db + detect any change
 export const useLoadEvents = () => {
   const events = ref([])
   const close = eventsCollection.onSnapshot((snapshot) => {
@@ -48,3 +54,5 @@ export const useLoadEvents = () => {
   onUnmounted(close)
   return events
 }
+
+// Exporting these funcitions so we can use them in other components

@@ -1,25 +1,15 @@
 ## Project setup
 
-```
-npm install
-```
+npm install vue-router
+npm install firebase
+npm install vue-firebase
+npm install bootstrap
 
-### Compiles and hot-reloads for development
+build locally with npm run serve
 
 ```
 npm run serve
-```
 
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
 ```
 
 ### Customize configuration

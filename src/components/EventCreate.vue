@@ -33,6 +33,7 @@ import { createEvent } from '@/firebase'
 import { reactive } from 'vue'
 export default {
   setup() {
+    // Storing data in reactive object
     const form = reactive({
       name: '',
       description: '',
@@ -41,6 +42,8 @@ export default {
       relatedEvents: '',
     })
 
+    // Function that is called on submit form
+    // In this fucntion createEvent function is passed + parametar form(for data)
     const onSubmit = async () => {
       await createEvent({ ...form })
       form.name = ''
@@ -50,6 +53,7 @@ export default {
       form.relatedEvents = ''
     }
 
+    // sending info out
     return { form, onSubmit }
   },
 }
