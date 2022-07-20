@@ -5,7 +5,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "events7/index.html"
+        "destination": "/index.html"
       }
     ]
   }
