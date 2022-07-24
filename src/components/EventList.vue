@@ -31,7 +31,7 @@
           <td>{{ priority }}</td>
           <td>{{ relatedEvents }}</td>
           <td>
-            <router-link :to="`/events7/edit/${id}`">
+            <router-link :to="`/edit/${id}`">
               <button class="btn btn-primary btn-sm me-2">Edit</button>
             </router-link>
             <button class="btn btn-danger btn-sm" @click="deleteEvent(id)">

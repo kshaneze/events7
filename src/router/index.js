@@ -4,12 +4,12 @@ import Edit from '@/views/Edit.vue'
 
 const routes = [
   {
-    path: '/events7/',
+    path: '/',
     name: 'Home',
     component: Home,
   },
   {
-    path: '/events7//edit/:id',
+    path: '/edit/:id',
     name: 'Edit',
     component: Edit,
   },

@@ -65,7 +65,7 @@ export default {
       await updateEvent(eventId.value, { ...form })
 
       // After updating by default send us to Home page
-      router.push('/events7/')
+      router.push('/')
       // Reset all inputs
       form.name = ''
       form.description = ''
