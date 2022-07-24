@@ -48,10 +48,9 @@
 import { useLoadEvents, deleteEvent } from '@/firebase'
 export default {
   setup() {
-    // Here we get array of events
+    // Here we are getting array of events
     const events = useLoadEvents()
     return { events, deleteEvent }
   },
 }
 </script>
-//
