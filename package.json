@@ -9,6 +9,8 @@
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
+    "@vuelidate/core": "^2.0.0-alpha.43",
+    "@vuelidate/validators": "^2.0.0-alpha.31",
     "bootstrap": "^5.2.0",
     "core-js": "^3.8.3",
     "firebase": "^9.9.0",

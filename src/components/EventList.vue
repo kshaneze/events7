@@ -3,7 +3,7 @@
     <table class="table m-0">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope=" ">Name</th>
           <th scope="col">Id</th>
           <th scope="col">Description</th>
           <th scope="col">Type</th>
