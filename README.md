@@ -3,7 +3,9 @@
 npm install vue-router,
 npm install firebase,
 npm install vue-firebase,
-npm install bootstrap
+npm install bootstrap,
+npm install @vuelidate/core,
+@vuelidate/validators
 
 build locally with npm run serve
 
