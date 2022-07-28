@@ -47,12 +47,11 @@ export default {
       relatedEvents: '',
     })
 
-    // onMount lifescycle hook that is use to load events
+    // onMount lifescycle hook that is used to load events
     onMounted(async () => {
       const event = await getEvent(eventId.value)
 
       form.name = event.name
-      // form.id = event.id
       form.description = event.description
       form.type = event.type
       form.priority = event.priority
