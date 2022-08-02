@@ -7,14 +7,40 @@
         <input type="text" v-model="form.name" class="form-control" />
       </div>
 
+      <div
+        class="input-errors"
+        v-for="error of v$.name.$errors"
+        :key="error.$uid"
+      >
+        <div class="error-msg">{{ error.$message }}</div>
+      </div>
+
       <div class="form-group">
         <label for="">Description</label>
         <input type="text" v-model="form.description" class="form-control" />
       </div>
+
+      <div
+        class="input-errors"
+        v-for="error of v$.description.$errors"
+        :key="error.$uid"
+      >
+        <div class="error-msg">{{ error.$message }}</div>
+      </div>
+
       <div class="form-group">
         <label for="">Event type</label>
         <input type="text" v-model="form.type" class="form-control" />
       </div>
+
+      <div
+        class="input-errors"
+        v-for="error of v$.type.$errors"
+        :key="error.$uid"
+      >
+        <div class="error-msg">{{ error.$message }}</div>
+      </div>
+
       <div class="form-group">
         <label for="priority">Event priority</label>
         <select
@@ -36,9 +62,26 @@
           <option value="10">10</option>
         </select>
       </div>
+
+      <div
+        class="input-errors"
+        v-for="error of v$.priority.$errors"
+        :key="error.$uid"
+      >
+        <div class="error-msg">{{ error.$message }}</div>
+      </div>
+
       <div class="form-group">
         <label for="">Related Events</label>
         <input type="text" v-model="form.relatedEvents" class="form-control" />
+      </div>
+
+      <div
+        class="input-errors"
+        v-for="error of v$.relatedEvents.$errors"
+        :key="error.$uid"
+      >
+        <div class="error-msg">{{ error.$message }}</div>
       </div>
 
       <button class="btn btn-success mt-3">Create Event</button>
@@ -63,15 +106,13 @@ export default {
       relatedEvents: '',
     })
 
-    const rules = computed(() => {
-      return {
-        name: { required },
-        description: { required },
-        type: { required },
-        priority: { required },
-        relatedEvents: { required },
-      }
-    })
+    const rules = {
+      name: { required },
+      description: { required },
+      type: { required },
+      priority: { required },
+      relatedEvents: { required },
+    }
 
     const v$ = useVuelidate(rules, form)
 
@@ -93,7 +134,14 @@ export default {
     }
 
     // sending info out
-    return { form, onSubmit, v$: useVuelidate() }
+    return { form, onSubmit, v$, useVuelidate }
   },
 }
 </script>
+
+<style scoped>
+.input-errors {
+  color: red;
+  font-size: 15px;
+}
+</style>
